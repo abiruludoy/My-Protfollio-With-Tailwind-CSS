@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abiruludoy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#366E0D',
+                        dark: '#020617',
+                        card: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #366E0D, #60ad24);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-slate-300 font-sans antialiased" x-data="{ mobileMenu: false }">
+
+    <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-4xl font-black text-white tracking-tighter">
+                AB<span class="text-primary">IR</span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-10">
+                <ul class="flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                    <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="#services" class="hover:text-primary transition-colors">Services</a></li>
+                    <li><a href="#skills" class="hover:text-primary transition-colors">Skills</a></li>
+                    <li><a href="#work" class="hover:text-primary transition-colors">Portfolio</a></li>
+                </ul>
+                <a href="#contact"
+                    class="bg-primary hover:bg-green-700 text-white px-7 py-2.5 rounded-full text-sm font-bold transition-all transform hover:-translate-y-1">
+                    Hire Me
+                </a>
+            </div>
+
+            <button class="lg:hidden text-white text-2xl" @click="mobileMenu = !mobileMenu">
+                <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars-staggered'"></i>
+            </button>
+        </nav>
+
+        <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-full" x-transition:enter-end="opacity-100 translate-y-0"
+            class="lg:hidden bg-dark border-b border-white/10 absolute w-full left-0 p-8 shadow-2xl">
+            <ul class="space-y-6 text-center text-lg font-medium">
+                <li><a href="#home" @click="mobileMenu = false">Home</a></li>
+                <li><a href="#services" @click="mobileMenu = false">Services</a></li>
+                <li><a href="#skills" @click="mobileMenu = false">Skills</a></li>
+                <li><a href="#contact" @click="mobileMenu = false" class="text-primary">Contact Me</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- start hero sections -->
+    <main>
+        <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+            <div class="absolute top-0 right-0 -z-10 w-96 h-96 bg-primary/20 blur-[120px] rounded-full"></div>
+
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex">
+                        <p
+                            class="inline-block px-4 py-1.5 rounded-full border border-primary/30 text-primary font-bold uppercase tracking-widest mb-6">
+                            <span class="text-white"> Hello, I'm</span> <br><span> ABIRUL ISLAM UDOY</span>
+                        </p>
+                    </div>
+                    <h1 class="text-5xl lg:text-8xl font-black text-white leading-tight mb-8">
+                        Designer & <br> <span class="gradient-text">Developer</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-slate-400 mb-10 max-w-xl leading-relaxed">
+                        A professional Web Developer and UI/UX Designer based in Bangladesh. I build beautiful and
+                        functional digital experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="px-10 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+                            View Portfolio
+                        </button>
+                        <button
+                            class="px-10 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-all">
+                            Let's Talk
+                        </button>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-md lg:max-w-none">
+                        <div
+                            class="aspect-[4/5] bg-slate-800 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                            <img src="imges/1000050985-Picsart-AiImageEnhancer.jpg" alt="Professional Profile"
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl hidden md:block">
+                            <div class="text-dark font-black text-4xl leading-none">10+</div>
+                            <div class="text-slate-500 font-bold text-xs uppercase tracking-tighter">Years Experience
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- start service sections -->
+
+        <section id="services" class="py-32 bg-slate-950">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+                    <div>
+                        <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">What I Do</h2>
+                        <h3 class="text-4xl lg:text-5xl font-bold text-white">Specialized Services</h3>
+                    </div>
+                    <p class="text-slate-400 max-w-md">
+                        I provide a wide range of services to help you build your brand and reach your goals.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="group p-10 bg-dark border border-white/5 rounded-3xl hover:bg-primary transition-all duration-500 hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-white/20">
+                            <i class="fa-solid fa-layer-group text-2xl text-primary group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">UI/UX Strategy</h4>
+                        <p class="text-slate-400 group-hover:text-white/80 transition-colors leading-relaxed">
+                            Research-driven design systems that increase conversion and user retention.
+                        </p>
+                    </div>
+                    <div
+                        class="group p-10 bg-dark border border-white/5 rounded-3xl hover:bg-primary transition-all duration-500 hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-white/20">
+                            <i class="fa-solid fa-code text-2xl text-primary group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">Web Development</h4>
+                        <p class="text-slate-400 group-hover:text-white/80 transition-colors leading-relaxed">
+                            Blazing fast, SEO-optimized web applications built with React and Tailwind.
+                        </p>
+                    </div>
+                    <div
+                        class="group p-10 bg-dark border border-white/5 rounded-3xl hover:bg-primary transition-all duration-500 hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-white/20">
+                            <i class="fa-solid fa-chart-line text-2xl text-primary group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">Brand Identity</h4>
+                        <p class="text-slate-400 group-hover:text-white/80 transition-colors leading-relaxed">
+                            Creating memorable visual identities that make your business stand out.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expartice sections -->
+
+        <section class="py-24">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-6">I am expert in <span class="text-primary">this
+                            field</span></h2>
+                    <p class="mb-8">Over the past 10 years, I've worked with various clients globally to deliver
+                        pixel-perfect designs and robust web solutions.</p>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="font-bold text-white">Html
+                                    5</span><span>99%</span></div>
+                            <div class="w-full bg-white/10 h-2 rounded-full">
+                                <div class="bg-primary h-2 rounded-full" style="width: 99%"></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2"><span
+                                        class="font-bold text-white">React.js</span><span>90%</span></div>
+                                <div class="w-full bg-white/10 h-2 rounded-full">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2"><span class="font-bold text-white">Tailwind
+                                        CSS</span><span>95%</span></div>
+                                <div class="w-full bg-white/10 h-2 rounded-full">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-center">
+                    <img src="imges/picts.jpg" alt=""
+                        class="h-[280px] rounded-md ml-[250px] object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+            </div>
+        </section>
+
+        <!-- start skill sections-->
+
+        <section id="skills" class="py-24 border-t border-white/5">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
+                    <div class="text-center">
+                        <span class="block text-5xl font-black text-white mb-2">98%</span>
+                        <span class="text-sm font-bold uppercase tracking-widest text-primary">Job Success</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-5xl font-black text-white mb-2">250+</span>
+                        <span class="text-sm font-bold uppercase tracking-widest text-primary">Happy Clients</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-5xl font-black text-white mb-2">15k</span>
+                        <span class="text-sm font-bold uppercase tracking-widest text-primary">Working Hours</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-5xl font-black text-white mb-2">12</span>
+                        <span class="text-sm font-bold uppercase tracking-widest text-primary">Awards Won</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- start footer section -->
+    <footer class="bg-slate-950 py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-3xl font-bold text-white">ABIRUL<span class="text-primary">UDOY</span></div>
+            <div class="flex space-x-6 text-xl">
+                <a href="https://dribbble.com/abiruludoy" class="hover:text-primary transition-colors"><i
+                        class="fa-brands fa-dribbble"></i></a>
+                <a href="https://www.linkedin.com/abiruludoy" class="hover:text-primary transition-colors"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/abiruludoy" class="hover:text-primary transition-colors"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="text-sm text-slate-500">&copy; 2025 ABIRUL ISLAM UDOY. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
